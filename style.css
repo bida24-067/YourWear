@@ -2,14 +2,10 @@
   
 body {
   background-color:black;
-}
- body {
     text-align: center;
-  }
-  
-  body {
     color: White;
   }
+
   #head1 {
     text-align: center;
     text-shadow: 1px 0.5px orange;
