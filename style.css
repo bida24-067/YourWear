@@ -1,17 +1,16 @@
-<style>
-  
-body {
-  background-color:black;
-    text-align: center;
-    color: White;
-  }
+#grad2 {
+  background-color: black;
+  text-align: center;
+  color: white;
+}
 
-  #head1 {
-    text-align: center;
-    text-shadow: 1px 0.5px orange;
-    font-weight: bold;
-  }
-  body {
+#head1 {
+  text-align: center;
+  text-shadow: 1px 0.5px orange;
+  font-weight: bold;
+}
+
+body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,20 +35,11 @@ body {
 }
 
 .topnav a.active {
-  background-color: #fcfafa;
-  color: rgb(0, 0, 0);
+  background-color: orange;
+  color: black;
 }
-  #Optimism_P {
-    text-decortion-line: Underline;
-    text-transform: bold;
-  }
-#Trust_P {
-   text-decortion-line: Underline;
-    text-transform: bold;
-  }
-#TheHand_P {
-   text-decortion-line: Underline;
-    text-transform: bold;
-  }
 
-</style>
+#Optimism_P, #Trust_P, #TheHand_P {
+  text-decoration-line: underline;
+  font-weight: bold;
+}
