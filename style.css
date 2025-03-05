@@ -8,6 +8,7 @@
   text-align: center;
   text-shadow: 1px 0.5px orange;
   font-weight: bold;
+  
 }
 
 body {
@@ -39,7 +40,7 @@ body {
   color: black;
 }
 
-#Optimism_P, #Trust_P, #TheHand_P {
+#Optimism_P, #Trust_P, #TheHand_P, #Me-Time_P, #Dream_P, #Respect_P, #AKA_P  {
   text-decoration-line: underline;
   font-weight: bold;
 }
