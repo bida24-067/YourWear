@@ -2,6 +2,8 @@
   background-color: black;
   text-align: center;
   color: white;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 #head1 {
