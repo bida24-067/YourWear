@@ -5,7 +5,9 @@
   max-width: 100%;
   overflow-x: hidden;
 }
-
+html {
+  oveflow-x: hidden;
+}
 #head1 {
   text-align: center;
   text-shadow: 1px 0.5px orange;
@@ -16,6 +18,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .topnav {
