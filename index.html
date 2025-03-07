@@ -12,12 +12,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>YourWear | Home </title>
-<link rel="icon" href="YourWearLogo.PNG" type="image/x-icon">
+<link rel="icon" href="YourWearLogo.PNG" type="image">
 </head>
 
 <body>
 
 <header>
+   <!-- Nav Bar -->
   <img id="logo1" src="New-YW.JPG" alt="YourWear" width="150" height="150">
 <div class="topnav">
   <a class="active" href="index.html">Home</a>
@@ -25,7 +26,11 @@
   <a href="about.html">About</a>
    <a href="User.html">User</a>
 </div>
-
+   <!-- Cart -->
+<div id="cart" style="position: absolute; top: 50px; right: 10px; border: 1px solid #000; padding: 10px; background-color: #fff;">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+</div>
   
 </header>
 
@@ -87,31 +92,32 @@ Here is A catalog of our products</p>
     <p>Visit <a href="https://linktr.ee/yourwearclothing">Our Store</a> to learn more about us.</p>
 
 </main>
-   <script>
-  const cart = [];
-
-  function addToCart(item) {
-    cart.push(item);
-    alert(`${item} added to cart!`);
-    console.log(cart);
-  }
-</script>
-<script>
+   
+   <!-- JavaScript-->  
+  <script>
   function addToCart(item) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`${item} added to cart!`);
+    displayCart();
   }
 
   function displayCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log('Cart:', cart);
+    let cartItems = document.getElementById('cart-items');
+    cartItems.innerHTML = '';
+    cart.forEach(item => {
+      let li = document.createElement('li');
+      li.textContent = item;
+      cartItems.appendChild(li);
+    });
   }
 
   window.onload = displayCart;
 </script>
 
+   
 <footer>
 <p> Find us at The Fields Shopping Centre Shop 13A Next to Spar </p>
 <p>&copy; 2025 YourWear Productions in collaboration with MontshoDsigns</p>
