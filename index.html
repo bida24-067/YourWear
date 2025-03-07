@@ -40,14 +40,14 @@ Here is A catalog of our products</p>
 <img id="Optimism" src="Optimism.png" alt="Optimism">
   <p id="Optimism_P"> Optimism. - The Hoodie </p>
     <p>The ability to be optimistic is a trait only known to the strongest of man & woman. Let's Be Optimistic. </p>
-      <button id="button1" type="button" onclick="alert('Added To Cart')">Add To Cart</button>
+      <button id="button1" type="button" onclick="addToCart('Added To Cart')">Add To Cart</button>
    
  <!-- Trust-->  
 <h2> Trust. </h2>
     <img id="Trust" src="Trust.png" alt="Trust">
     <p id="Trust_P"> Trust. - The Hoodie </p>
   <p> A design by YourWear emphasizing on the "Process." So trust the process, trust my process.</p>
-      <button id="button1" type="button" onclick="alert('Added To Cart')">Add To Cart</button>
+      <button id="button1" type="button" onclick="alert('Optomism Hoodie')">Add To Cart</button>
    
    
 <!-- Dream -->
@@ -87,7 +87,30 @@ Here is A catalog of our products</p>
     <p>Visit <a href="https://linktr.ee/yourwearclothing">Our Store</a> to learn more about us.</p>
 
 </main>
+   <script>
+  const cart = [];
 
+  function addToCart(item) {
+    cart.push(item);
+    alert(`${item} added to cart!`);
+    console.log(cart);
+  }
+</script>
+<script>
+  function addToCart(item) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(item);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${item} added to cart!`);
+  }
+
+  function displayCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log('Cart:', cart);
+  }
+
+  window.onload = displayCart;
+</script>
 
 <footer>
 <p> Find us at The Fields Shopping Centre Shop 13A Next to Spar </p>
