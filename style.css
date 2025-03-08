@@ -15,6 +15,10 @@ html {
   
 }
 
+img {
+  filter : drop shadow(16px 16px 10px white);
+  }
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
