@@ -123,3 +123,21 @@ body {
     margin-bottom: 20px;
 }
 
+.story p, .values p, .closing p, .founder {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer img {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 0;
+}
