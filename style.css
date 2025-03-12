@@ -87,4 +87,39 @@ body {
    height: auto;
 }
 
+.hero {
+    background-color: #222;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.story, .values, .closing, .founder{
+    background-color: #333;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.story h2, .values h2, .founder h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
 
