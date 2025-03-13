@@ -30,4 +30,35 @@
 </header>
 
 
+
 <main>
+  <!-- Account Viewing Center -->
+  <section class="account-center">
+    <h2>Account Information</h2>
+    
+    <div class="account-details">
+      <label for="display-picture">Display Picture:</label>
+      <img id="display-picture" src="path-to-display-picture.jpg" alt="Display Picture">
+      <input type="file" id="upload-picture" name="upload-picture">
+    </div>
+    
+    <div class="account-details">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="John Doe">
+    </div>
+    
+    <div class="account-details">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="john.doe@example.com">
+    </div>
+    
+    <button id="save-button" type="button" onclick="saveAccountInfo()">Save Changes</button>
+  </section>
+</main>
+<!-- Java Script -->
+<script>
+  function saveAccountInfo() {
+    // Implement the functionality to save the account information
+    alert('Account information saved successfully!');
+  }
+</script>
