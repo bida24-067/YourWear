@@ -14,8 +14,7 @@ html {
 #head1 {
   text-align: center;
   text-shadow: 1px 0.5px orange;
-  font-weight: bold;
-  
+  font-weight: bold; 
 }
 
 img {
@@ -141,6 +140,8 @@ footer img {
 footer p {
     margin: 0;
 }
+
+*/ Back Button*/
 
 #backButton {
   border: none;
