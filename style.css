@@ -164,3 +164,42 @@ footer p {
 }
 
 */ Account center */
+
+.account-center {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.account-details {
+  margin-bottom: 15px;
+}
+
+.account-details label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.account-details input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#save-button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#save-button:hover {
+  background-color: #45a049;
+}
