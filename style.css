@@ -77,7 +77,7 @@ body {
   border: 2px solid #04AA6D;
 }
 
-#button1:hover {
+#button1:hover, #price {
   background-color: orange;
   color: black;
 }
