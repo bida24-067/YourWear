@@ -234,10 +234,5 @@ footer {
 
 
 
-.fixed-bottom-left {
-  position: fixed;
-  bottom: 10px; /* Adjust as needed */
-  left: 10px; /* Adjust as needed */
-  width: 12rem; /* Adjust the width as needed */
-  z-index: 1000; /* Ensure it stays on top of other elements */
-}
+
+
