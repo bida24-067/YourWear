@@ -150,18 +150,20 @@ body {
     line-height: 1.6;
 }
 
-footer {
+.footer {
     background-color: #222;
     padding: 20px 0;
     text-align: center;
+    color: white;
 }
 
-footer img {
+.footer img {
     margin-bottom: 10px;
 }
 
-footer p {
+.footer p {
     margin: 0;
+    color: white;
 }
 
 
