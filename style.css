@@ -232,7 +232,11 @@ footer {
 }
 
 
-
+/* custom.css */
+.products-page {
+    background-color: black;
+    color: white; /* Optional: to ensure text is visible on a black background */
+}
 
 
 
