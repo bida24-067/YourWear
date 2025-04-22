@@ -25,7 +25,7 @@ html {
 }
 
 img {
-  filter : drop shadow(16px 16px 10px white);
+  filter : drop-shadow(16px 16px 10px white);
   }
 
 body {
