@@ -1,10 +1,17 @@
 #grad2 {
-  background-color: black;
+  background-color: black; 
   text-align: center;
   color: white;
   max-width: 100%;
   overflow-x: hidden;
 }
+
+body, html {
+  background-color: black !important;
+  color: white;
+  overflow-x: hidden;
+}
+
 #grad1 {
     background: linear-gradient(to right, #000000, #434343);
 }
