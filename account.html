@@ -162,5 +162,27 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- JavaScript -->
+
+<script>
+  const auth = firebase.auth();
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.querySelector("input[type='email']").value;
+    const password = document.querySelector("input[type='password']").value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Account created, now redirect or show message
+        alert("Account created successfully!");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert("Sign-up failed: " + error.message);
+      });
+  });
+</script>
 </body>
 </html>
