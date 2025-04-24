@@ -162,8 +162,13 @@
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js"></script>
 
+<!-- Firebase Core (Compat version) -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+
+<!-- Your Firebase Config & Login Code -->
 <script>
-  // Your Firebase configuration
+  // Your Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyCqy5--P3iowffUMJ_cHaNewLpLCtPgM3s",
     authDomain: "yourwear-b94dc.firebaseapp.com",
@@ -176,9 +181,8 @@
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
 
-  // Login Form Submission
+  // Setup login event
   document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -186,20 +190,18 @@
     const password = document.querySelector("input[type='password']").value;
     const rememberMe = document.querySelector("#rememberMe").checked;
 
-    const persistenceType = rememberMe
+    const persistence = rememberMe
       ? firebase.auth.Auth.Persistence.LOCAL
       : firebase.auth.Auth.Persistence.SESSION;
 
-    auth.setPersistence(persistenceType)
+    firebase.auth().setPersistence(persistence)
       .then(() => {
-        return auth.signInWithEmailAndPassword(email, password);
+        return firebase.auth().signInWithEmailAndPassword(email, password);
       })
       .then((userCredential) => {
-        // User is signed in
-        window.location.href = "index.html"; // Redirect after successful login
+        window.location.href = "index.html"; // success
       })
       .catch((error) => {
-        // Show error to user
         alert("Login failed: " + error.message);
       });
   });
