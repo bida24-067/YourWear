@@ -164,13 +164,13 @@
 
 <!-- JavaScript -->
 
-<<!-- Firebase JS (Compat Versions) -->
-<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
+<!-- Firebase App (Core) -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js"></script>
 
-<!-- Firebase Config & Sign-Up Logic -->
 <script>
-  // Firebase config
+  // Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCqy5--P3iowffUMJ_cHaNewLpLCtPgM3s",
     authDomain: "yourwear-b94dc.firebaseapp.com",
@@ -184,20 +184,23 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  // Sign up handler
-  document.getElementById("signup-form").addEventListener("submit", function (e) {
+  // Auth handler
+  const auth = firebase.auth();
+
+  // Handle signup
+  document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = document.getElementById("signupEmail").value;
-    const password = document.getElementById("signupPassword").value;
+    const email = document.querySelector("input[type='email']").value;
+    const password = document.querySelector("input[type='password']").value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         alert("Account created successfully!");
-        window.location.href = "login.html";
+        window.location.href = "login.html"; // Redirect to login
       })
       .catch((error) => {
-        alert("Error: " + error.message);
+        alert("Signup failed: " + error.message);
       });
   });
 </script>
