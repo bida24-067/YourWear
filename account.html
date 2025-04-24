@@ -164,23 +164,40 @@
 
 <!-- JavaScript -->
 
-<script>
-  const auth = firebase.auth();
+<<!-- Firebase JS (Compat Versions) -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 
-  document.querySelector("form").addEventListener("submit", function (e) {
+<!-- Firebase Config & Sign-Up Logic -->
+<script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCqy5--P3iowffUMJ_cHaNewLpLCtPgM3s",
+    authDomain: "yourwear-b94dc.firebaseapp.com",
+    projectId: "yourwear-b94dc",
+    storageBucket: "yourwear-b94dc.appspot.com",
+    messagingSenderId: "1076578676354",
+    appId: "1:1076578676354:web:f053ab2fea80a2485d4e9b",
+    measurementId: "G-C59RWHLQZG"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Sign up handler
+  document.getElementById("signup-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = document.querySelector("input[type='email']").value;
-    const password = document.querySelector("input[type='password']").value;
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
 
-    auth.createUserWithEmailAndPassword(email, password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        // Account created, now redirect or show message
         alert("Account created successfully!");
-        window.location.href = "index.html";
+        window.location.href = "login.html";
       })
       .catch((error) => {
-        alert("Sign-up failed: " + error.message);
+        alert("Error: " + error.message);
       });
   });
 </script>
