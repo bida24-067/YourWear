@@ -136,6 +136,10 @@
       <div class="d-grid">
         <button type="submit" class="btn btn-orange">Login</button>
       </div>
+      <div class="form-check mb-3">
+  <input class="form-check-input" type="checkbox" id="rememberMe">
+  <label class="form-check-label" for="rememberMe">Remember me</label>
+</div>
     </form>
   </div>
   <!-- Page End -->
@@ -186,17 +190,29 @@
 <!-- JavaScript -->
 
 <script>
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "yourwear.firebaseapp.com",
-    projectId: "yourwear",
-    storageBucket: "yourwear.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
-  };
+  const auth = firebase.auth();
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.querySelector("input[type='email']").value;
+    const password = document.querySelector("input[type='password']").value;
+    const rememberMe = document.querySelector("#rememberMe").checked;
+
+    auth.setPersistence(rememberMe ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        return auth.signInWithEmailAndPassword(email, password);
+      })
+      .then((userCredential) => {
+        // Redirect to homepage or dashboard
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert("Login failed: " + error.message);
+      });
+  });
 </script>
+
+
 </body>
 </html>
