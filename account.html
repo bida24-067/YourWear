@@ -164,12 +164,11 @@
 
 <!-- JavaScript -->
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth-compat.js"></script>
 
 <script>
-  // Firebase config
+  // Your Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyCqy5--P3iowffUMJ_cHaNewLpLCtPgM3s",
     authDomain: "yourwear-b94dc.firebaseapp.com",
@@ -182,7 +181,6 @@
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
 
   // Signup handler
   document.querySelector("form").addEventListener("submit", function (e) {
@@ -191,12 +189,18 @@
     const email = document.querySelector("input[type='email']").value;
     const password = document.querySelector("input[type='password']").value;
 
-    auth.createUserWithEmailAndPassword(email, password)
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters long.");
+      return;
+    }
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         alert("Account created successfully!");
         window.location.href = "login.html";
       })
       .catch((error) => {
+        console.error("Signup error:", error);
         alert("Signup failed: " + error.message);
       });
   });
