@@ -112,6 +112,10 @@
 <!-- Feedback Form -->
 <div class="form-wrapper">
   <div class="form-container text-center">
+        <!-- Logo -->
+    <a href="index.html">
+      <img src="W-BG-YW.PNG" alt="YourWear Logo" class="img-fluid mb-4" style="max-height: 80px;">
+    </a>
     <h2 class="title mb-4">We Value Your Feedback<span style="color:#fd7e14;">.</span></h2>
 
     <form id="feedbackForm">
@@ -164,21 +168,22 @@
 
   // Handle feedback form submit
   document.getElementById("feedbackForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const email = document.getElementById("email").value;
-    const comment = document.getElementById("comment").value;
+  const email = document.getElementById("email").value;
+  const comment = document.getElementById("comment").value;
 
-    db.collection("feedbacks").add({
-      email: email,
-      comment: comment,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    }).then(() => {
-      window.location.href = "thankyou.html"; // Redirect on success
-    }).catch((error) => {
-      alert("Failed to submit feedback: " + error.message);
-    });
+  db.collection("feedbacks").add({
+    email: email,
+    comment: comment,
+    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+  }).then(() => {
+    alert("Feedback Sent! Thank you for helping us improve."); // <-- show alert
+    window.location.href = "thankyou.html"; // <-- then redirect
+  }).catch((error) => {
+    alert("Failed to submit feedback: " + error.message);
   });
+});
 </script>
 
 </body>
