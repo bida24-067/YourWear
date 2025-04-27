@@ -1,0 +1,16 @@
+ 
+    body {
+      background-color: #1b1c1e;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .btn-orange {
+      background-color: #fd7e14;
+      color: #fff;
+    }
+    .btn-orange:hover {
+      background-color: #e06c0c;
+    }
+  
