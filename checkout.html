@@ -112,9 +112,34 @@
     measurementId: "G-C59RWHLQZG"
   };
 
+<!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
+<!-- Firebase Analytics -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js"></script>
+<!-- Firestore -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js"></script>
+
+<script>
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCqy5--P3iowffUMJ_cHaNewLpLCtPgM3s",
+    authDomain: "yourwear-b94dc.firebaseapp.com",
+    databaseURL: "https://yourwear-b94dc-default-rtdb.firebaseio.com",
+    projectId: "yourwear-b94dc",
+    storageBucket: "yourwear-b94dc.appspot.com",
+    messagingSenderId: "1076578676354",
+    appId: "1:1076578676354:web:f053ab2fea80a2485d4e9b",
+    measurementId: "G-C59RWHLQZG"
+  };
+
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  // Initialize Firestore
+  const db = firebase.firestore();
 </script>
+
 <script>
   function loadCart() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -146,15 +171,11 @@
 
   function removeFromCart(index) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1); // Remove the item at the given index
-    localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
-    loadCart(); // Reload the cart
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
   }
 
-  document.addEventListener("DOMContentLoaded", loadCart);
-</script>
-
-<script>
   function confirmOrder() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     if (cart.length === 0) {
@@ -162,26 +183,24 @@
       return;
     }
 
-    // Reference the Firebase Realtime Database
-    const db = firebase.database();
-    const orderRef = db.ref("orders").push(); // Create a new order entry
-
-    // Save the cart to Firebase
-    orderRef.set({
+    db.collection("orders").add({
       cart: cart,
-      timestamp: new Date().toISOString()
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     .then(() => {
       alert("Order Confirmed! Thank you for shopping with YourWear!");
-      localStorage.removeItem("cart"); // Clear the cart
-      window.location.href = "thankyou.html"; // Redirect to a thank-you page
+      localStorage.removeItem("cart");
+      window.location.href = "thankyou.html";
     })
     .catch((error) => {
       console.error("Error saving order:", error);
       alert("Failed to confirm order. Please try again.");
     });
   }
+
+  document.addEventListener("DOMContentLoaded", loadCart);
 </script>
+
 
 </body>
 </html>
