@@ -1,7 +1,7 @@
   function addToCart() {
     const product = {
       name: "Dream Tee",
-      price: 200,
+      price: 250,
       size: document.getElementById("size").value,
       quantity: 1
     };
