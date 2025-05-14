@@ -90,36 +90,7 @@ Find us at The Fields Shopping Centre Shop 13A Next to Spar</p>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
    <!-- JavaScript-->
-<script>
-function dismissCard(button) {
-  const card = button.closest('.card');
-  card.remove();
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-        const popupCard = document.getElementById("popup-card");
-
-        // Show the card
-        popupCard.style.display = "block";
-
-        // Set a timeout to hide the card after 10 seconds
-        setTimeout(() => {
-            popupCard.style.animation = "fadeOut 0.5s ease-in-out"; // Trigger fade-out animation
-            popupCard.addEventListener("animationend", () => {
-                popupCard.style.display = "none"; // Hide after animation ends
-            });
-        }, 10000); // 10 seconds
-    });
-
-    // Dismiss card manually with the "Close" button
-    function dismissCard(button) {
-        const card = button.closest(".card");
-        card.style.animation = "fadeOut 0.5s ease-in-out"; // Trigger fade-out animation
-        card.addEventListener("animationend", () => {
-            card.remove(); // Remove card after animation ends
-        });
-    }
-</script>
+<script src="popupcard.js"></script>
   <footer>
     
      <a href="https://bida24-067.github.io/YourWear">

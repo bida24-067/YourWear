@@ -90,27 +90,19 @@
    
     <!-- add to cart -->
 
- <script>
-  function addToCart() {
-    const product = {
-      name: "Dream Tee",
-      price: 200,
-      size: document.getElementById("size").value,
-      quantity: 1
-    };
+ <script src="dream.js"></script>
+   <script>
+      function addToCart() {
+         alert("Item added to cart!");
+      }
+   </script>
 
-    // Get the existing cart from localStorage
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Add the product to the cart
-    cart.push(product);
-
-    // Save the updated cart back to localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert("Dream Tee added to Your cart!");
-  }
-</script>
+   <!-- Back Button -->
+   <script>
+      document.getElementById("backButton").addEventListener("click", function() {
+         window.history.back();
+      });
+   </script>
 
 <!-- Boostrap JS -->
 

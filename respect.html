@@ -89,30 +89,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
  <!-- add to cart -->
 
- <script>
-  function addToCart() {
-    const product = {
-      name: "Respect Tee",
-      price: 200,
-      size: document.getElementById("size").value,
-      quantity: 1
-    };
-
-    // Get the existing cart from localStorage
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Add the product to the cart
-    cart.push(product);
-
-    // Save the updated cart back to localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    alert("Respect Tee added to Your cart!");
-  }
-</script>
-
-
-   
+ <script src="respect.js"></script>
 <footer>
    <a href="https://bida24-067.github.io/YourWear">
     <img src="New-YW-BG.png" alt="YourWear" width="100" height="100">
